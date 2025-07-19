@@ -1,4 +1,3 @@
-Enunciado
 La tienda Miss Fortune Arcane está recibiendo nuevos pedidos de juegos, para ellos necesitar un algoritmo que les ayude a promocionar los diferentes juegos para que así la población pueda adquirirlos: 
 
 *Arcane: Batalla de Noxus "5" $
