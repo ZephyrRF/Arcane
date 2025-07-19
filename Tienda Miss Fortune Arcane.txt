@@ -1,7 +1,32 @@
 Algoritmo Tienda Miss Fortune Arcane
 Inicio
-Var
+Var opcion: Entero, seguir: Booleano;
+Var nombre_juegos[3], nombre_peliculas[3]: Cadena;
+Var precio_juegos[3], precio_peliculas[3], dinero_juegos[3], dinero_peliculas[3], monto_total: Real;
+Var contador_juegos[3], contador_peliculas[3]: Entero;
+Repetir
+  Mostrar << "¡Bienvenido a la Tienda Miss Fortune Arcane!";
+  Mostrar << "¿Qué desea comprar hoy?";
+  Mostrar << "1: Juegos";
+  Mostrar << "2: Películas";
+  Mostrar << "Elija una de las opciones.";
+  Leer >> opcion;
+  Mientras (opcion < 1 or opcion > 2) Hacer;
+    Mostrar << "Error en dato, intente nuevamente";
+    Leer >> opcion;
+  Fin_Mientras
+  Si (opcion = 1) Entonces;
+    juegos();
+    Mostrar << juegos;
+  Sino
+    peliculas();
+    Mostrar << peliculas;
+  Fin_Si
+  Mostrar << "¿Desea realizar otro pedido? 1: Sí, 0: No";
+  Leer >> seguir;
+Hasta (seguir = 0);
+Fin_Repetir
 
-
+//PDF Final con lo acumulado en el día
 
 Fin
