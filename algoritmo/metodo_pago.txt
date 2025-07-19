@@ -14,97 +14,97 @@ Mostrar << "6: Divisas";
 Mostrar << "Elija la de su preferencia";
 Leer >> opcion;
 Mientras (opcion < 1 OR opcion > 6) Hacer;
-    Mostrar << "Error en dato, intente nuevamente";
-    Leer >> opcion;
+  Mostrar << "Error en dato, intente nuevamente";
+  Leer >> opcion;
 Fin_Mientras
 En caso (opcion > 0) sea;
-    Caso (opcion = 1);
-        Mostrar << "Ingrese su numero de cedula";
+  Caso (opcion = 1);
+    Mostrar << "Ingrese su numero de cedula";
+    Leer >> cedula;
+
+    Mientras (cedula < 1000000) Hacer;
+        Mostrar << "Por favor ingrese un dato valido";
         Leer >> cedula;
+    Fin_Mientras
 
-        Mientras (cedula < 1000000) Hacer;
-            Mostrar << "Por favor ingrese un dato valido";
-            Leer >> cedula;
-        Fin_Mientras
-
-        Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
-        Leer >> tipo_cuenta;
-        Mostrar << "Ingrese su clave secreta";
+    Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
+    Leer >> tipo_cuenta;
+    Mostrar << "Ingrese su clave secreta";
+    Leer >> clave;
+    
+    Mientras (clave < 0) Hacer;
+        Mostrar << "No puede ser menor a 0";
         Leer >> clave;
-        
-        Mientras (clave < 0) Hacer;
-            Mostrar << "No puede ser menor a 0";
-            Leer >> clave;
-        Fin_Mientras
+    Fin_Mientras
 
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
-    Caso (opcion = 2);
-        Mostrar << "Ingrese el numero de su tarjeta";
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
+  Caso (opcion = 2);
+    Mostrar << "Ingrese el numero de su tarjeta";
+    Leer >> num_tarjeta;
+
+    Mientras (num_tarjeta < 0) Hacer;
+        Mostrar << "Error en datos ingresados,intente nuevamente";
         Leer >> num_tarjeta;
+    Fin_Mientras
 
-        Mientras (num_tarjeta < 0) Hacer;
-            Mostrar << "Error en datos ingresados,intente nuevamente";
-            Leer >> num_tarjeta;
-        Fin_Mientras
+    Mostrar << "Ingrese la fecha de vencimiento DD-MM-AAAA";
+    Leer >> fecha_vencimiento;
+    Mostrar << "Ingrese los 4 digitos traseros de su tarjeta";
+    Leer >> digitos_tarjeta;
 
-        Mostrar << "Ingrese la fecha de vencimiento DD-MM-AAAA";
-        Leer >> fecha_vencimiento;
-        Mostrar << "Ingrese los 4 digitos traseros de su tarjeta";
+    Mientras (digitos_tarjeta < 0) Hacer;
+        Mostrar << "Error en datos ingresados,intente nuevamente";
         Leer >> digitos_tarjeta;
+    Fin_Mientras
 
-        Mientras (digitos_tarjeta < 0) Hacer;
-            Mostrar << "Error en datos ingresados,intente nuevamente";
-            Leer >> digitos_tarjeta;
-        Fin_Mientras
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
+  Caso (opcion = 3);
+    Mostrar << "Datos Bancarios Miss Fortune Arcane";
+    Mostrar << "Banco:Banesco (0134)";
+    Mostrar << "J-10526368-7";
+    Mostrar << "Numero telefónico: 0412-8628439";
+    Mostrar << "Ingrese su numero de referencia por favor (mínimo 6 dígitos)";
+    Leer >> referencia;
 
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
-    Caso (opcion = 3);
-        Mostrar << "Datos Bancarios Miss Fortune Arcane";
-        Mostrar << "Banco:Banesco (0134)";
-        Mostrar << "J-10526368-7";
-        Mostrar << "Numero telefónico: 0412-8628439";
-        Mostrar << "Ingrese su numero de referencia por favor (mínimo 6 dígitos)";
+    Mientras (referencia < 0) Hacer;
+        Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
+    Fin_Mientras
 
-        Mientras (referencia < 0) Hacer;
-            Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
-            Leer >> referencia;
-        Fin_Mientras
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
+  Caso (opcion = 4);
+    Mostrar << "Datos Bancarios Miss Fortune Arcane";
+    Mostrar << "Banco: Banesco";
+    Mostrar << "Numero de cuenta: 01340254325200006321";
+    Mostrar << "J-10526368-7";
+    Mostrar << "Tipo de cuenta: Corriente";
+    Mostrar << "Ingrese su numero de referencia por favor (mínimo 6 dígitos)";
+    Leer >> referencia;
 
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
-    Caso (opcion = 4);
-        Mostrar << "Datos Bancarios Miss Fortune Arcane";
-        Mostrar << "Banco: Banesco";
-        Mostrar << "Numero de cuenta: 01340254325200006321";
-        Mostrar << "J-10526368-7";
-        Mostrar << "Tipo de cuenta: Corriente";
-        Mostrar << "Ingrese su numero de referencia por favor (mínimo 6 dígitos)";
+    Mientras (referencia < 0) Hacer;
+        Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
+    Fin_Mientras
 
-        Mientras (referencia < 0) Hacer;
-            Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
-            Leer >> referencia;
-        Fin_Mientras
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
+  Caso (opcion = 5);
+    Mostrar << "Perfecto estimado cliente, su pago será en Bolívares en efectivo, en taquilla se harán cargo de recibir su pago";
+    
+    // Procesando...
 
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
-    Caso (opcion = 5);
-        Mostrar << "Perfecto estimado cliente, su pago será en Bolívares en efectivo, en taquilla se harán cargo de recibir su pago";
-        
-        // Procesando...
-
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
-    Otro caso
-        Mostrar << "Perfecto estimado cliente, su pago será en Divisas en efectivo, en taquilla se harán cargo de recibir su pago";
-        
-        // Procesando...
-        
-        Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
-        validacion_pago = 1;
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
+  Otro caso
+    Mostrar << "Perfecto estimado cliente, su pago será en Divisas en efectivo, en taquilla se harán cargo de recibir su pago";
+    
+    // Procesando...
+    
+    Mostrar << "Se ha efectuado el pago de ", monto, "$, muchas gracias por su pago";
+    validacion_pago = 1;
 Fin_Caso
 
 Devolver(validacion_pago);
