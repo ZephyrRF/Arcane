@@ -39,10 +39,12 @@ Repetir
       Leer >> nombre_representante;
       Mostrar << "Okay, ahora ingrese su edad";
       Leer >> edad_representante;
+      
       Mientras (edad_representante < 1) Hacer;
         Mostrar << "Error en dato, intente nuevamente";
         Leer >> edad_representante;
       Fin_Mientras
+      
       Si (edad_representante < 18) Entonces;
         Mostrar << "No tiene la edad suficiente para ejercer de representante";
         representante = 0;
@@ -50,7 +52,7 @@ Repetir
     Fin_Si
   Fin_Si
   Si (edad > 11) OR (representante = 1) Entonces;
-    Mostrar << "¿Qué desea comprar hoy?";
+    Mostrar << "¿Qué desea comprar?";
     Mostrar << "1: Juegos";
     Mostrar << "2: Películas";
     Mostrar << "Elija una de las opciones.";
