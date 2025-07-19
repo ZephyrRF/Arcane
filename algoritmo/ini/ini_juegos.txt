@@ -1,4 +1,20 @@
-Procedimiento ini_juegos();
+Procedimiento ini_juegos(E/S: precio_juegos[i]: Real, contadores_juegos[i], inventario_juegos[i]: Entero, nombre_juegos[i]: Cadena);
 Inicio
+
+nombre_juegos[1] = "Arcane: La Batalla de Noxus";
+nombre_juegos[2] = "Hechiceras: El poder de las 3";
+nombre_juegos[3] = "Criminal Main: The Revenge";
+
+precio_juegos[1] = 5;
+precio_juegos[2] = 10;
+precio_juegos[3] = 15;
+
+inventario_juegos[1] = 30;
+inventario_juegos[2] = 20;
+inventario_juegos[3] = 10;
+
+Para (i = 1 Hasta i = 3) Hacer;
+    contadores_juegos[i] = 0;
+Fin_Para
 
 Fin_Procedimiento

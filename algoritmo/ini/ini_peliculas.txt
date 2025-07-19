@@ -1,4 +1,20 @@
-Procedimiento ini_peliculas();
+Procedimiento ini_peliculas(E/S: precio_peliculas[i]: Real, contadores_peliculas[i], inventario_peliculas[i]: Entero, nombre_peliculas[i]: Cadena);
 Inicio
+
+nombre_peliculas[1] = "Harry Potter: La piedra filosofal";
+nombre_peliculas[2] = "Dragon Ball Super Broly";
+nombre_peliculas[3] = "Avengers: Endgame";
+
+precio_peliculas[1] = 6;
+precio_peliculas[2] = 12;
+precio_peliculas[3] = 18;
+
+inventario_peliculas[1] = 35;
+inventario_peliculas[2] = 25;
+inventario_peliculas[3] = 15;
+
+Para (i = 1 Hasta i = 3) Hacer;
+    contadores_peliculas[i] = 0;
+Fin_Para
 
 Fin_Procedimiento

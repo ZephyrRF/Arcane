@@ -2,18 +2,21 @@ Algoritmo Tienda Miss Fortune Arcane
 Inicio
 Var opcion: Entero, seguir, representante: Booleano;
 Var nombre, nombre_representante, nombre_juegos[3], nombre_peliculas[3]: Cadena;
-Var precio_juegos[3], precio_peliculas[3], monto_total: Real;
+Var precio_juegos[3], precio_peliculas[3], dinero_juego, dinero_pelicula, total_juegos = 0, total_peliculas = 0, monto_total: Real;
 Var edad, edad_representante, contador_juegos[3], contador_peliculas[3], inventario_juegos[3], inventario_peliculas[3], i: Entero;
+
 Repetir
   Mostrar << "¡Bienvenido a la Tienda Miss Fortune Arcane!";
   Mostrar << "Díganos su nombre";
   Leer >> nombre;
   Mostrar << "Díganos su edad";
   Leer >> edad;
+
   Mientras (edad < 1) Hacer;
     Mostrar << "Error en dato, intente nuevamente";
     Leer >> edad;
   Fin_Mientras
+
   Si (edad <= 11) Entonces;
     Mostrar << "No tiene la suficiente edad para comprar juegos o películas, ¿Usted vino con representante? 1: Sí, 0: No";
     Leer >> representante;
@@ -32,28 +35,53 @@ Repetir
       Fin_Si
     Fin_Si
   Fin_Si
-  
-  Mostrar << "¿Qué desea comprar hoy?";
-  Mostrar << "1: Juegos";
-  Mostrar << "2: Películas";
-  Mostrar << "Elija una de las opciones.";
-  Leer >> opcion;
-  Mientras (opcion < 1 or opcion > 2) Hacer;
-    Mostrar << "Error en dato, intente nuevamente";
+  Si (edad > 11) OR (representante = 1) Entonces;
+    Mostrar << "¿Qué desea comprar hoy?";
+    Mostrar << "1: Juegos";
+    Mostrar << "2: Películas";
+    Mostrar << "Elija una de las opciones.";
     Leer >> opcion;
-  Fin_Mientras
-  Si (opcion = 1) Entonces;
-    juegos(nombres_juegos[i], precio_juegos[i], contadores_juegos[i]);
-    Mostrar << juegos;
+
+    Mientras (opcion < 1 or opcion > 2) Hacer;
+      Mostrar << "Error en dato, intente nuevamente";
+      Leer >> opcion;
+    Fin_Mientras
+
+    Si (opcion = 1) Entonces;
+      juegos(nombres_juegos[i], precio_juegos[i], contadores_juegos[i], inventario_juegos[i]);
+      Mostrar << juegos;
+    Sino
+      peliculas(nombres_peliculas[i], precio_peliculas[i], contadores_peliculas[i], inventario_peliculas[i]);
+      Mostrar << peliculas;
+    Fin_Si
+    Mostrar << "¿Desea realizar otro pedido? 1: Sí, 0: No";
+    Leer >> seguir;
   Sino
-    peliculas(nombres_peliculas[i], precio_peliculas[i], contadores_peliculas[i]);
-    Mostrar << peliculas;
+    Mostrar << "No cumple con los requisitos para comprar juegos o películas.";
   Fin_Si
-  Mostrar << "¿Desea realizar otro pedido? 1: Sí, 0: No";
-  Leer >> seguir;
 Hasta (seguir = 0);
 Fin_Repetir
 
 //PDF Final con lo acumulado en el día
+Mostrar << "Datos Finales de la venta de juegos";
+Para (i = 1 Hasta i = 3) Hacer;
+  dinero_juego = precio_juegos[i] * contadores_juegos[i];
+  Mostrar << nombre_juegos[i]
+  Mostrar << "Dicho juego fue elegido un total de: ", contadores_juegos[i], "veces.";
+  Mostrar << "Dinero acumulado del juego en cuestión: ", dinero_juego;
+  total_juegos = total_juegos + dinero_juego;
+Fin_Para
+Mostrar << "El dinero total generado en la venta de juegos es de: ", total_juegos, "$";
 
+Mostrar << "Datos Finales de la venta de películas";
+Para (i = 1 Hasta i = 3) Hacer;
+  dinero_pelicula = precio_peliculas[i] * contadores_peliculas[i]
+  Mostrar << "Dicha película fue elegida un total de: ", contadores_peliculas[i], "veces.";
+  Mostrar << "Dinero acumulado de la película en cuestión: ", dinero_pelicula;
+  total_peliculas = total_peliculas + dinero_pelicula;
+Fin_Para
+Mostrar << "El dinero total generado en la venta de películas es de: ", total_peliculas, "$";
+
+monto_total = total_juegos + total_peliculas;
+Mostrar << "Por último, el dinero total acumulado en el día de la Tienda Miss Fortune Arcane es de: ", monto_total, "$";
 Fin
