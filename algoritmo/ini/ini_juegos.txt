@@ -1,4 +1,4 @@
-Procedimiento ini_juegos(E/S: precio_juegos[i]: Real, contadores_juegos[i], inventario_juegos[i]: Entero, nombre_juegos[i]: Cadena);
+Procedimiento ini_juegos(E/S: i: Entero, precio_juegos[i]: Real, contadores_juegos[i], inventario_juegos[i]: Entero, nombre_juegos[i]: Cadena);
 Inicio
 
 nombre_juegos[1] = "Arcane: La Batalla de Noxus";

@@ -1,4 +1,4 @@
-Procedimiento ini_peliculas(E/S: precio_peliculas[i]: Real, contadores_peliculas[i], inventario_peliculas[i]: Entero, nombre_peliculas[i]: Cadena);
+Procedimiento ini_peliculas(E/S: i: Entero, precio_peliculas[i]: Real, contadores_peliculas[i], inventario_peliculas[i]: Entero, nombre_peliculas[i]: Cadena);
 Inicio
 
 nombre_peliculas[1] = "Harry Potter: La piedra filosofal";

@@ -1,4 +1,4 @@
-Procedimiento juegos(E/S: precio_juegos[i]: Real, contadores_juegos[i], inventario_juegos[i]: Entero, nombre_juegos[i]: Cadena, representante: Booleano, nombre: Cadena);
+Procedimiento juegos(E/S: precio_juegos[i]: Real, contadores_juegos[i], inventario_juegos[i]: Entero, nombre_juegos[i], nombre: Cadena);
 Inicio
 Var precio, monto: Real;
 Var cont, cantidad, opcion: Entero;

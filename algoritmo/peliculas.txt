@@ -1,4 +1,4 @@
-Procedimiento peliculas(E/S: precio_peliculas[i]: Real, contadores_peliculas[i], inventario_peliculas[i]: Entero, nombre_peliculas[i]: Cadena, nombre: Cadena);
+Procedimiento peliculas(E/S: precio_peliculas[i]: Real, contadores_peliculas[i], inventario_peliculas[i]: Entero, nombre_peliculas[i], nombre: Cadena);
 Inicio
 Var precio, monto: Real;
 Var cont, cantidad, opcion: Entero;
