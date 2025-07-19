@@ -4,62 +4,25 @@ Var precio, dinero: Real;
 Var edad, edad_representante, cont, opcion: Entero;
 Var nombre, nombre_juego: Cadena;
 Var representante: Booleano;
-Mostrar << "Decidió comprar juegos";
-Mostrar << "Inserte su nombre aquí";
-Leer >> nombre;
-Mostrar << "Inserte su edad";
-Leer >> edad;
-Mientras (edad < 1) Hacer;
-  Mostrar << "Error en dato, ingrese nuevamente";
-  Leer >> edad;
-Fin_Mientras
-Si (edad < 11) Entonces;
-  Mostrar << "Es menor de edad según nuestras políticas, ¿Usted vino con representante? 1: Sí, 0: No";
-  Leer >> representante;
-  Si (representante = 1) Entonces;
-    Mostrar << "Ingrese su nombre";
-    Leer >> nombre;
-    Mostrar << "Ingrese su edad";
-    Leer >> edad;
-    Mientras (edad < 1) Hacer;
-      Mostrar << "Error en dato, intente nuevamente";
-      Leer >> edad;
-    Fin_Mientras
-    Si (edad < 18) Entonces;
-      Mostrar << "No es válido como representante";
-    Sino
-      Mostrar << "Es válido, ahora proceda a comprar su juego";
-      Mostrar << "Juegos disponibles: ";
-      Mostrar << "1: Arcane: Batalla de Noxus 5$";
-      Mostrar << "2: Hechiceras: el poder de las 3 10$";
-      Mostrar << "3: Criminal Main: The Revenge 15$";
-      Mostrar << "Elija una opción";
-      Leer >> opcion;
-      Mientras (opcion < 1 or opcion > 3) Hacer;
-        Mostrar << "Error en dato, solo números del 1 al 3";
-        Leer >> opcion;
-      Fin_Mientras
-      En caso (opcion > 0) sea;
-        Caso (opcion = 1);
-          precio = precio_juegos[1];
-          cont = contadores_juegos[1];
-          nombre_juego = nombre_juegos[1];
-          Mostrar << "Ha elegido el juego: ", nombre_juego;
-          Mostrar << "Su precio es de: ", precio, "$";
-          Mostrar << "Aquí tiene los distintos métodos de pago disponibles";
-          precio = monto;
-          validacion = metodo_pago(monto);
-          Si (validacion = 1) Entonces;
-            Mostrar << "Pago verificado, gracias por su compra";
-            cont = cont + 1;
-            contadores_juegos[1] = cont;
-            dinero = dinero + precio; 
-            dinero_juegos[1] = dinero;
-          Sino
-            Mostrar << "Le pedimos que por favor realice el pago.";
-          Fin_Si
-          
-    Fin_Si
-  Fin_Si
+Si (representante = 0) Entonces;
+  Mostrar << "No tiene representante";
 Fin_Si
+Repetir
+  Mostrar << "Decidió comprar juegos";
+  Mostrar << "Es válido, ahora proceda a comprar su juego";
+  Mostrar << "Juegos disponibles: ";
+  Mostrar << "1: Arcane: Batalla de Noxus 5$";
+  Mostrar << "2: Hechiceras: el poder de las 3 10$";
+  Mostrar << "3: Criminal Main: The Revenge 15$";
+  Mostrar << "Elija una opción";
+  Leer >> opcion;
+  Mientras (opcion < 1 or opcion > 3) Hacer;
+    Mostrar << "Error en dato, solo números del 1 al 3";
+    Leer >> opcion;
+  Fin_Mientras
+  nombre_juego = nombre_juegos[opcion];
+  precio = precio_juegos[opcion];
+  cont = contadores_juegos[opcion];
+
+
 Fin_Procedimiento
