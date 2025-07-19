@@ -1,4 +1,4 @@
-Algoritmo Tienda Arcane
+Algoritmo Tienda Miss Fortune Arcane
 Inicio
 Var
 
