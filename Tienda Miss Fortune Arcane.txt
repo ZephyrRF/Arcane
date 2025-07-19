@@ -3,9 +3,36 @@ Inicio
 Var opcion: Entero, seguir: Booleano;
 Var nombre_juegos[3], nombre_peliculas[3]: Cadena;
 Var precio_juegos[3], precio_peliculas[3], dinero_juegos[3], dinero_peliculas[3], monto_total: Real;
-Var contador_juegos[3], contador_peliculas[3]: Entero;
+Var contador_juegos[3], contador_peliculas[3], i: Entero;
 Repetir
   Mostrar << "¡Bienvenido a la Tienda Miss Fortune Arcane!";
+  Mostrar << "Díganos su nombre";
+  Leer >> nombre;
+  Mostrar << "Díganos su edad";
+  Leer >> edad;
+  Mientras (edad < 1) Hacer;
+    Mostrar << "Error en dato, intente nuevamente";
+    Leer >> edad;
+  Fin_Mientras
+  Si (edad <= 11) Entonces;
+    Mostrar << "No tiene la suficiente edad para comprar juegos o películas, ¿Usted vino con representante? 1: Sí, 0: No";
+    Leer >> representante;
+    Si (representante = 1) Entonces;
+      Mostrar << "Ingrese su nombre";
+      Leer >> nombre_representante;
+      Mostrar << "Okay, ahora ingrese su edad";
+      Leer >> edad_representante;
+      Mientras (edad_representante < 1) Hacer;
+        Mostrar << "Error en dato, intente nuevamente";
+        Leer >> edad_representante;
+      Fin_Mientras
+      Si (edad_representante < 18) Entonces;
+        Mostrar << "No tiene la edad suficiente para ejercer de representante";
+        representante = 0;
+      Fin_Si
+    Fin_Si
+  Fin_Si
+  
   Mostrar << "¿Qué desea comprar hoy?";
   Mostrar << "1: Juegos";
   Mostrar << "2: Películas";
@@ -16,10 +43,10 @@ Repetir
     Leer >> opcion;
   Fin_Mientras
   Si (opcion = 1) Entonces;
-    juegos();
+    juegos(nombres_juegos[i], precio_juegos[i], contadores_juegos[i], dinero_juegos[i]);
     Mostrar << juegos;
   Sino
-    peliculas();
+    peliculas(nombres_peliculas[i], precio_peliculas[i], contadores_peliculas[i], dinero_peliculas[i]);
     Mostrar << peliculas;
   Fin_Si
   Mostrar << "¿Desea realizar otro pedido? 1: Sí, 0: No";
