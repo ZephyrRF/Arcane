@@ -1,0 +1,4 @@
+Procedimiento ini_peliculas();
+Inicio
+
+Fin_Procedimiento

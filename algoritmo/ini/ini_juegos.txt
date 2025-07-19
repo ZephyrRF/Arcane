@@ -1,0 +1,4 @@
+Procedimiento ini_juegos();
+Inicio
+
+Fin_Procedimiento

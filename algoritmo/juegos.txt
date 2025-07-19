@@ -1,28 +1,49 @@
-Procedimiento juegos(E/S: precio_juegos[i], dinero_juegos[i]: Real, contadores_juegos[i]: Entero, nombre_juegos[i]: Cadena);
+Procedimiento juegos(E/S: precio_juegos[i], dinero_juegos[i]: Real, contadores_juegos[i]: Entero, nombre_juegos[i]: Cadena, representante: Booleano, nombre: Cadena);
 Inicio
-Var precio, dinero: Real;
-Var edad, edad_representante, cont, opcion: Entero;
-Var nombre, nombre_juego: Cadena;
-Var representante: Booleano;
+Var precio, monto: Real;
+Var cont, cantidad, opcion: Entero;
+Var nombre_juego: Cadena;
+Var seguir: Booleano;
 Si (representante = 0) Entonces;
   Mostrar << "No tiene representante";
-Fin_Si
-Repetir
-  Mostrar << "Decidió comprar juegos";
-  Mostrar << "Es válido, ahora proceda a comprar su juego";
-  Mostrar << "Juegos disponibles: ";
-  Mostrar << "1: Arcane: Batalla de Noxus 5$";
-  Mostrar << "2: Hechiceras: el poder de las 3 10$";
-  Mostrar << "3: Criminal Main: The Revenge 15$";
-  Mostrar << "Elija una opción";
-  Leer >> opcion;
-  Mientras (opcion < 1 or opcion > 3) Hacer;
-    Mostrar << "Error en dato, solo números del 1 al 3";
+Sino
+  Repetir
+    Mostrar << "Decidió comprar juegos";
+    Mostrar << "Es válido, ahora proceda a comprar su juego";
+    Mostrar << "Juegos disponibles: ";
+    Mostrar << "1: Arcane: Batalla de Noxus 5$";
+    Mostrar << "2: Hechiceras: el poder de las 3 10$";
+    Mostrar << "3: Criminal Main: The Revenge 15$";
+    Mostrar << "Elija una opción";
     Leer >> opcion;
-  Fin_Mientras
-  nombre_juego = nombre_juegos[opcion];
-  precio = precio_juegos[opcion];
-  cont = contadores_juegos[opcion];
-
-
+    Mientras (opcion < 1 or opcion > 3) Hacer;
+      Mostrar << "Error en dato, solo números del 1 al 3";
+      Leer >> opcion;
+    Fin_Mientras
+    nombre_juego = nombre_juegos[opcion];
+    precio = precio_juegos[opcion];
+    cont = contadores_juegos[opcion];
+    cantidad = inventario_juegos[opcion];
+    Si (cantidad > 0) Entonces;
+      Mostrar << nombre, "usted ha elegido el juego: ", nombre_juego, "con un precio de: ", precio, "$";
+      Mostrar << "Aquí los métodos de pago disponibles, efectúe su pago";
+      monto = precio;
+      validacion = metodo_pago(monto);
+      Si (validacion = 1) Entonces;
+        Mostrar << "Muchas gracias por su compra";
+        cont = cont + 1;
+        cantidad = cantidad - 1;
+      Sino
+        Mostrar << "Realice su pago por favor.";
+      Fin_Si
+    Sino
+      Mostrar << "Lo sentimos, se agotó este juego.";
+    Fin_Si
+    contadores_juegos[opcion] = cont;
+    inventario_juegos[opcion] = cantidad;
+    Mostrar << "¿Desea comprar otro juego? 1: Sí, 0: No";
+    Leer >> seguir;
+  Hasta (seguir = 0);
+  Fin_Repetir
+Fin_Si
 Fin_Procedimiento
