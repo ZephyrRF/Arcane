@@ -1,0 +1,5 @@
+Procedimiento juegos();
+Inicio
+Var
+
+Fin_Procedimiento
