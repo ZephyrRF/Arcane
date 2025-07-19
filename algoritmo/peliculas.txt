@@ -6,44 +6,44 @@ Var nombre_pelicula: Cadena;
 Var seguir, validacion: Booleano;
 
 Repetir
-    Mostrar << "Decidió comprar películas";
-    Mostrar << "Películas disponibles: ";
-    Mostrar << "1: Harry Potter y la piedra filosofal 6$";
-    Mostrar << "2: Dragon Ball Super Broly 12$";
-    Mostrar << "3: Avengers: Endgame 18$";
-    Mostrar << "Elija una opción";
+  Mostrar << "Decidió comprar películas";
+  Mostrar << "Películas disponibles: ";
+  Mostrar << "1: Harry Potter y la piedra filosofal 6$";
+  Mostrar << "2: Dragon Ball Super Broly 12$";
+  Mostrar << "3: Avengers: Endgame 18$";
+  Mostrar << "Elija una opción";
+  Leer >> opcion;
+
+  Mientras (opcion < 1 OR opcion > 3) Hacer;
+    Mostrar << "Error en dato, solo números del 1 al 3";
     Leer >> opcion;
+  Fin_Mientras
 
-    Mientras (opcion < 1 OR opcion > 3) Hacer;
-        Mostrar << "Error en dato, solo números del 1 al 3";
-        Leer >> opcion;
-    Fin_Mientras
+  nombre_pelicula = nombre_peliculas[opcion];
+  precio = precio_peliculas[opcion];
+  cont = contadores_peliculas[opcion];
+  cantidad = inventario_peliculas[opcion];
 
-    nombre_pelicula = nombre_peliculas[opcion];
-    precio = precio_peliculas[opcion];
-    cont = contadores_peliculas[opcion];
-    cantidad = inventario_peliculas[opcion];
-
-    Si (cantidad > 0) Entonces;
-        Mostrar << nombre, "usted ha elegido el juego: ", nombre_pelicula, "con un precio de: ", precio, "$";
-        Mostrar << "Aquí los métodos de pago disponibles, efectúe su pago";
-        monto = precio;
-        validacion = metodo_pago(monto);
-        Si (validacion = 1) Entonces;
-            Mostrar << "Muchas gracias por su compra";
-            cont = cont + 1;
-            cantidad = cantidad - 1;
-        Sino
-            Mostrar << "Realice su pago por favor.";
-        Fin_Si
+  Si (cantidad > 0) Entonces;
+    Mostrar << nombre, "usted ha elegido el juego: ", nombre_pelicula, "con un precio de: ", precio, "$";
+    Mostrar << "Aquí los métodos de pago disponibles, efectúe su pago";
+    monto = precio;
+    validacion = metodo_pago(monto);
+    Si (validacion = 1) Entonces;
+        Mostrar << "Muchas gracias por su compra";
+        cont = cont + 1;
+        cantidad = cantidad - 1;
     Sino
-        Mostrar << "Lo sentimos, se agotó esta película.";
+        Mostrar << "Realice su pago por favor.";
     Fin_Si
+  Sino
+      Mostrar << "Lo sentimos, se agotó esta película.";
+  Fin_Si
 
-    contadores_peliculas[opcion] = cont;
-    inventario_peliculas[opcion] = cantidad;
-    Mostrar << "¿Desea comprar otra película? 1: Sí, 0: No";
-    Leer >> seguir;
+  contadores_peliculas[opcion] = cont;
+  inventario_peliculas[opcion] = cantidad;
+  Mostrar << "¿Desea comprar otra película? 1: Sí, 0: No";
+  Leer >> seguir;
 Hasta (seguir = 0);
 Fin_Repetir
 Fin_Procedimiento
