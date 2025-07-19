@@ -3,7 +3,7 @@ Inicio
 Var precio, monto: Real;
 Var cont, cantidad, opcion: Entero;
 Var nombre_pelicula: Cadena;
-Var seguir: Booleano;
+Var seguir, validacion: Booleano;
 
 Repetir
     Mostrar << "Decidió comprar películas";
@@ -37,7 +37,7 @@ Repetir
             Mostrar << "Realice su pago por favor.";
         Fin_Si
     Sino
-        Mostrar << "Lo sentimos, se agotó este juego.";
+        Mostrar << "Lo sentimos, se agotó esta película.";
     Fin_Si
 
     contadores_peliculas[opcion] = cont;

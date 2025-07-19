@@ -81,7 +81,7 @@ Fin_Repetir
 Mostrar << "Datos Finales de la venta de juegos";
 Para (i = 1 Hasta i = 3) Hacer;
   dinero_juego = precio_juegos[i] * contadores_juegos[i];
-  Mostrar << nombre_juegos[i]
+  Mostrar << nombre_juegos[i];
   Mostrar << "Dicho juego fue elegido un total de: ", contadores_juegos[i], "veces.";
   Mostrar << "Cantidad disponible de dicho juego: ", inventario_juegos[i];
   Mostrar << "Dinero acumulado del juego en cuestión: ", dinero_juego;
@@ -91,7 +91,8 @@ Mostrar << "El dinero total generado en la venta de juegos es de: ", total_juego
 
 Mostrar << "Datos Finales de la venta de películas";
 Para (i = 1 Hasta i = 3) Hacer;
-  dinero_pelicula = precio_peliculas[i] * contadores_peliculas[i]
+  dinero_pelicula = precio_peliculas[i] * contadores_peliculas[i];
+  Mostrar << nombre_peliculas[i];
   Mostrar << "Dicha película fue elegida un total de: ", contadores_peliculas[i], "veces.";
   Mostrar << "Cantidad disponible de dicha película: ", inventario_peliculas[i];
   Mostrar << "Dinero acumulado de la película en cuestión: ", dinero_pelicula;

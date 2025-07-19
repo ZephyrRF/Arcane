@@ -3,7 +3,7 @@ Inicio
 Var precio, monto: Real;
 Var cont, cantidad, opcion: Entero;
 Var nombre_juego: Cadena;
-Var seguir: Booleano;
+Var seguir, validacion: Booleano;
 
 Repetir
   Mostrar << "Decidió comprar juegos";
